@@ -26,7 +26,7 @@ export class UsersRepository extends Repository<User> {
     } catch (error) {
       if (error?.code === 11000) {
         throw new ConflictException(
-          `Error while saving user: ${error.message}. Username already exists.`
+          `Error while saving user: Username ${username} already exists.`
         );
       }
     }
