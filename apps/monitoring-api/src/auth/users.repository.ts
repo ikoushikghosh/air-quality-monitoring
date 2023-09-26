@@ -14,16 +14,17 @@ export class UsersRepository extends Repository<User> {
     const { username, password } = authCredentialsDto;
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(password, salt);
-    const user = this.create({
-      id: uuid(),
-      username,
-      password: hashedPassword,
-    });
     try {
+      const user = this.create({
+        id: uuid(),
+        username,
+        password: hashedPassword,
+      });
+      console.log('saving...');
       await this.save(user);
+      console.log('saved.');
     } catch (error) {
-      console.log(error);
-      if (error.name === 'MongoBulkWriteError') {
+      if (error?.code === 11000) {
         throw new ConflictException(
           `Error while saving user: ${error.message}. Username already exists.`
         );
