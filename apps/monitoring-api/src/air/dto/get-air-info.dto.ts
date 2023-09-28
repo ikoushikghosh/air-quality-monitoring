@@ -1,4 +1,4 @@
 export class GetAirInfoDto {
   page: string;
-  perPage?: string;
+  per_page?: string;
 }

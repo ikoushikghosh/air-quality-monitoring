@@ -2,8 +2,9 @@ import React from 'react';
 import SignInForm from '../components/SignInForm';
 import Link from 'next/link';
 import { setCookie } from '../../libs/set-cookie';
+import { NextPage } from 'next';
 
-const SignupPage = () => {
+const SignupPage: NextPage = () => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-40">
       <div className="z-10 max-w-5xl w-full items-center justify-center lg:flex">

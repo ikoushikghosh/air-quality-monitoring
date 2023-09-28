@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { verifyJwtToken } from './libs/auth';
 
-const AUTH_PAGES = ['/login', '/signup', '/_next/static', '/favicon'];
+const AUTH_PAGES = ['/login', '/signup', '/public/', '/_next/static/'];
 const cookieKey = 'accessToken';
 
 const isAuthPages = (url: string) => {
@@ -16,13 +16,13 @@ export async function middleware(req: NextRequest) {
   const isAuthPageRequested = isAuthPages(nextUrl.pathname);
   if (isAuthPageRequested) {
     if (!hasVerifiedToken) {
+      console.log(url, nextUrl);
       const response = NextResponse.next();
       response.cookies.delete(cookieKey);
       return response;
     }
-
-    const response = NextResponse.redirect(new URL(`/`, url));
-    return response;
+    // const response = NextResponse.redirect(new URL(`/`, url));
+    // return response;
   }
 
   if (!hasVerifiedToken) {
@@ -39,4 +39,6 @@ export async function middleware(req: NextRequest) {
   return NextResponse.next();
 }
 
-export const config = { matcher: ['/login', '/:path*'] };
+export const config = {
+  matcher: ['/login', '/signup', '/:path*'],
+};

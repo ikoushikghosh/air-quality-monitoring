@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './page.module.css';
 import Link from 'next/link';
 import SignInForm from './components/SignInForm';
+import { setCookie } from '../libs/set-cookie';
 
 const Home = () => {
   return (
@@ -12,7 +13,7 @@ const Home = () => {
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
               Log in to your account
             </h1>
-            <SignInForm />
+            <SignInForm setToken={setCookie} />
 
             <p className="text-sm text-center font-light text-gray-500 dark:text-gray-400">
               Don’t have an account yet?{' '}

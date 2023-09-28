@@ -19,7 +19,7 @@ export class AirService {
   async getAirInfo(
     getAirInfoDto: GetAirInfoDto
   ): Promise<{ airInfo: AirInfo[]; count: number }> {
-    const { perPage = '5', page } = getAirInfoDto;
+    const { per_page: perPage = '5', page } = getAirInfoDto;
     const take: number = Number.parseInt(perPage);
     const skip = take * Number.parseInt(page) - take;
     return await this.airInfoRepository.getAirInfo(take, skip);
