@@ -16,7 +16,6 @@ export async function middleware(req: NextRequest) {
   const isAuthPageRequested = isAuthPages(nextUrl.pathname);
   if (isAuthPageRequested) {
     if (!hasVerifiedToken) {
-      console.log(url, nextUrl);
       const response = NextResponse.next();
       response.cookies.delete(cookieKey);
       return response;

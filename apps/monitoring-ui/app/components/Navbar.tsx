@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 const Navbar: React.FC = () => {
@@ -27,23 +28,16 @@ const Navbar: React.FC = () => {
               <span className="badge badge-sm indicator-item">8</span>
             </div>
           </label>
-          <div
-            tabIndex={0}
-            className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow"
-          >
-            <div className="card-body">
-              <span className="font-bold text-lg">8 Items</span>
-              <span className="text-info">Subtotal: $999</span>
-              <div className="card-actions">
-                <button className="btn btn-primary btn-block">View cart</button>
-              </div>
-            </div>
-          </div>
         </div>
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
-              <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              <Image
+                src="/images/profile.png" // Route of the image file
+                height={144} // Desired size with correct aspect ratio
+                width={144} // Desired size with correct aspect ratio
+                alt="Your Name"
+              />
             </div>
           </label>
           <ul

@@ -2,9 +2,9 @@ import React from 'react';
 
 const Spinner = () => {
   return (
-    <div>
-      <span className="loading loading-dots loading-lg"></span>
-    </div>
+    <>
+      <span className="loading loading-infinity loading-lg"></span>
+    </>
   );
 };
 
