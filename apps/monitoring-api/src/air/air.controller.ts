@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Post, Query, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  Post,
+  Query,
+  UseGuards,
+} from '@nestjs/common';
 import { CreateAirInfoDto } from './dto/create-air-info.dto';
 import { AirInfo } from './air.entity';
 import { AirService } from './air.service';
@@ -19,5 +27,10 @@ export class AirController {
     @Query() getAirInfoDto: GetAirInfoDto
   ): Promise<{ airInfo: AirInfo[]; count: number }> {
     return this.airService.getAirInfo(getAirInfoDto);
+  }
+
+  @Get('/:isocode')
+  getAirInfoByIsoCode(@Param('isocode') isocode: string): Promise<AirInfo> {
+    return this.airService.getAirInfoByIsoCode(isocode);
   }
 }

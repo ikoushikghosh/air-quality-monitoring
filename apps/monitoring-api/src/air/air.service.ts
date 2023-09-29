@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { AirInfoRepository } from './air.repository';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreateAirInfoDto } from './dto/create-air-info.dto';
@@ -19,9 +19,23 @@ export class AirService {
   async getAirInfo(
     getAirInfoDto: GetAirInfoDto
   ): Promise<{ airInfo: AirInfo[]; count: number }> {
-    const { per_page: perPage = '5', page } = getAirInfoDto;
+    const { per_page: perPage = '25', page } = getAirInfoDto;
     const take: number = Number.parseInt(perPage);
     const skip = take * Number.parseInt(page) - take;
     return await this.airInfoRepository.getAirInfo(take, skip);
+  }
+
+  async getAirInfoByIsoCode(isoCode: string): Promise<AirInfo> {
+    const airInfo = await this.airInfoRepository.findOne({
+      where: { isoCode: isoCode },
+    });
+
+    if (!airInfo) {
+      throw new NotFoundException(
+        `Air Info data for iso-code ${isoCode} not found!`
+      );
+    }
+
+    return airInfo;
   }
 }

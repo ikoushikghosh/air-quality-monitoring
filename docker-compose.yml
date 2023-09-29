@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  # React App
+  monitoring-ui:
+    extends:
+      file: docker-compose.base.yml
+      service: nx-app-base
+    command: npx nx serve monitoring-ui --host=0.0.0.0
+    ports:
+      - 4200:4200
+
+  # Post-retrieval Service
+  monitoring-api:
+    extends:
+      file: docker-compose.base.yml
+      service: nx-app-base
+    command: npx nx serve monitoring-api --host=0.0.0.0
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongo
+    environment:
+      - MONGODB_CONN_STR=mongodb://mongo/air-quality-monitor
+
+  # mongo
+  mongo:
+    image: mongo:latest
+    container_name: mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: air-quality-monitor
+    ports:
+      - 27017:27017
+
+volumes:
+  mono-node-modules: null

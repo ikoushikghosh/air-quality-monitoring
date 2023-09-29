@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata: 
+ name: air-quality-monitoring-service
+spec:
+ type: NodePort
+ ports:
+  - port: 8000
+    targetPort: 4200
+    nodePort: 30233
+ selector:
+  component: web

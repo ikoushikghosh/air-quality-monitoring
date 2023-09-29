@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import SignInForm from '../components/SignInForm';
-import { setCookie } from '../../libs/set-cookie';
+import { setCookie } from '../../actions/set-cookie';
 import { NextPage } from 'next';
 
 const LogInPage: NextPage = () => {

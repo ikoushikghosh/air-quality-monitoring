@@ -1,8 +1,7 @@
 import React from 'react';
-import styles from './page.module.css';
 import Link from 'next/link';
 import SignInForm from './components/SignInForm';
-import { setCookie } from '../libs/set-cookie';
+import { setCookie } from '../actions/set-cookie';
 
 const Home = () => {
   return (

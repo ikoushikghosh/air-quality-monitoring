@@ -1,3 +1,5 @@
+'use client';
+import { useRouter } from 'next/navigation';
 import { AirInfo } from '../../models/AirInfo';
 import React from 'react';
 
@@ -5,6 +7,11 @@ interface Props {
   airInfoCollection: AirInfo[];
 }
 const AirInfoRecordsTable: React.FC<Props> = ({ airInfoCollection }) => {
+  const router = useRouter();
+
+  const handleOnClickDetails = async (isoCode: string) => {
+    router.push(`/airinfo/${isoCode}`);
+  };
   return (
     <tbody>
       {airInfoCollection &&
@@ -25,7 +32,12 @@ const AirInfoRecordsTable: React.FC<Props> = ({ airInfoCollection }) => {
               <td>{airInfo.airQualityIndex}</td>
               <td>{airInfo.population}</td>
               <th>
-                <button className="btn btn-ghost btn-xs">details</button>
+                <button
+                  className="btn btn-outline btn-primary btn-xs"
+                  onClick={() => handleOnClickDetails(airInfo.isoCode)}
+                >
+                  details
+                </button>
               </th>
             </tr>
           );

@@ -35,7 +35,11 @@ export async function middleware(req: NextRequest) {
 
     return response;
   }
-  return NextResponse.next();
+  const validResponse = NextResponse.next();
+  if (nextUrl.pathname === '/login') {
+    validResponse.cookies.delete(cookieKey);
+  }
+  return validResponse;
 }
 
 export const config = {
