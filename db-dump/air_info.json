@@ -1,0 +1,240 @@
+{
+    "_id" : ObjectId("6512f0777ad5fa2611e1c0d4"),
+    "country" : "Chad",
+    "isoCode" : "TD",
+    "population" : "17179740",
+    "airQualityIndex" : "89.7",
+    "rank" : "1"
+}
+{
+    "_id" : ObjectId("6512f1217ad5fa2611e1c0d5"),
+    "country" : "Iraq",
+    "isoCode" : "IQ",
+    "population" : "43533592",
+    "airQualityIndex" : "80.1",
+    "rank" : "2"
+}
+{
+    "_id" : ObjectId("6512f18c7ad5fa2611e1c0d6"),
+    "country" : "Pakistan",
+    "isoCode" : "PK",
+    "population" : "231402117",
+    "airQualityIndex" : "70.9",
+    "rank" : "3"
+}
+{
+    "_id" : ObjectId("6512f2097ad5fa2611e1c0d7"),
+    "country" : "Bahrain",
+    "isoCode" : "BH",
+    "population" : "1463265",
+    "airQualityIndex" : "66.6",
+    "rank" : "4"
+}
+{
+    "_id" : ObjectId("6512f2507ad5fa2611e1c0d8"),
+    "country" : "Bangladesh",
+    "isoCode" : "BD",
+    "population" : "169356251",
+    "airQualityIndex" : "65.8",
+    "rank" : "5"
+}
+{
+    "_id" : ObjectId("6512f2a77ad5fa2611e1c0d9"),
+    "country" : "Burkina Faso",
+    "isoCode" : "BF",
+    "population" : "22100643",
+    "airQualityIndex" : "63",
+    "rank" : "6"
+}
+{
+    "_id" : ObjectId("65168f8b7feb901dbd774d96"),
+    "country" : "Kuwait",
+    "isoCode" : "KW",
+    "population" : "22100643",
+    "airQualityIndex" : "63",
+    "rank" : "7"
+}
+{
+    "_id" : ObjectId("65168fac7feb901dbd774d97"),
+    "country" : "India",
+    "isoCode" : "IN",
+    "population" : "22100643",
+    "airQualityIndex" : "63",
+    "rank" : "8"
+}
+{
+    "_id" : ObjectId("65168fce7feb901dbd774d98"),
+    "country" : "Egypt",
+    "isoCode" : "EG",
+    "population" : "22100643",
+    "airQualityIndex" : "63",
+    "rank" : "9"
+}
+{
+    "_id" : ObjectId("65168ff97feb901dbd774d99"),
+    "country" : "Tajikistan",
+    "isoCode" : "TJ",
+    "population" : "22100643",
+    "airQualityIndex" : "63",
+    "rank" : "10"
+}
+{
+    "_id" : ObjectId("6516901e7feb901dbd774d9a"),
+    "country" : "Afghanistan",
+    "isoCode" : "AF",
+    "population" : "1100643",
+    "airQualityIndex" : "63",
+    "rank" : "11"
+}
+{
+    "_id" : ObjectId("651690327feb901dbd774d9b"),
+    "country" : "Albania",
+    "isoCode" : "AL",
+    "population" : "1200643",
+    "airQualityIndex" : "63",
+    "rank" : "12"
+}
+{
+    "_id" : ObjectId("651690507feb901dbd774d9c"),
+    "country" : "Algeria",
+    "isoCode" : "DZ",
+    "population" : "1200644",
+    "airQualityIndex" : "63",
+    "rank" : "13"
+}
+{
+    "_id" : ObjectId("651690727feb901dbd774d9d"),
+    "country" : "Antarctica",
+    "isoCode" : "AQ",
+    "population" : "1200644",
+    "airQualityIndex" : "63",
+    "rank" : "14"
+}
+{
+    "_id" : ObjectId("651690907feb901dbd774d9e"),
+    "country" : "Aruba",
+    "isoCode" : "AW",
+    "population" : "1200644",
+    "airQualityIndex" : "63",
+    "rank" : "15"
+}
+{
+    "_id" : ObjectId("651690a57feb901dbd774d9f"),
+    "country" : "Australia",
+    "isoCode" : "AU",
+    "population" : "1200644",
+    "airQualityIndex" : "63",
+    "rank" : "16"
+}
+{
+    "_id" : ObjectId("651690de7feb901dbd774da0"),
+    "country" : "Belgium",
+    "isoCode" : "BE",
+    "population" : "1200644",
+    "airQualityIndex" : "63",
+    "rank" : "17"
+}
+{
+    "_id" : ObjectId("651690ee7feb901dbd774da1"),
+    "country" : "Belize",
+    "isoCode" : "BZ",
+    "population" : "1200644",
+    "airQualityIndex" : "63",
+    "rank" : "18"
+}
+{
+    "_id" : ObjectId("651691037feb901dbd774da2"),
+    "country" : "Belize",
+    "isoCode" : "BM",
+    "population" : "1200644",
+    "airQualityIndex" : "63",
+    "rank" : "19"
+}
+{
+    "_id" : ObjectId("651691167feb901dbd774da3"),
+    "country" : "Bhutan",
+    "isoCode" : "BT",
+    "population" : "1200644",
+    "airQualityIndex" : "63",
+    "rank" : "20"
+}
+{
+    "_id" : ObjectId("651691267feb901dbd774da4"),
+    "country" : "Brazil",
+    "isoCode" : "BR",
+    "population" : "1200644",
+    "airQualityIndex" : "63",
+    "rank" : "21"
+}
+{
+    "_id" : ObjectId("6516925d7feb901dbd774da5"),
+    "country" : "China",
+    "isoCode" : "CN",
+    "population" : "33200644",
+    "airQualityIndex" : "63",
+    "rank" : "22"
+}
+{
+    "_id" : ObjectId("651692777feb901dbd774da6"),
+    "country" : "Colombia",
+    "isoCode" : "CO",
+    "population" : "33200644",
+    "airQualityIndex" : "63",
+    "rank" : "23"
+}
+{
+    "_id" : ObjectId("6516928a7feb901dbd774da7"),
+    "country" : "Denmark",
+    "isoCode" : "DK",
+    "population" : "33200644",
+    "airQualityIndex" : "63",
+    "rank" : "24"
+}
+{
+    "_id" : ObjectId("651692a37feb901dbd774da8"),
+    "country" : "Ecuador",
+    "isoCode" : "EC",
+    "population" : "33200644",
+    "airQualityIndex" : "63",
+    "rank" : "25"
+}
+{
+    "_id" : ObjectId("651692c87feb901dbd774da9"),
+    "country" : "Finland",
+    "isoCode" : "FI",
+    "population" : "33200644",
+    "airQualityIndex" : "63",
+    "rank" : "26"
+}
+{
+    "_id" : ObjectId("651692da7feb901dbd774daa"),
+    "country" : "France",
+    "isoCode" : "FR",
+    "population" : "33200644",
+    "airQualityIndex" : "63",
+    "rank" : "27"
+}
+{
+    "_id" : ObjectId("651692f17feb901dbd774dab"),
+    "country" : "Georgia",
+    "isoCode" : "GE",
+    "population" : "23200644",
+    "airQualityIndex" : "63",
+    "rank" : "28"
+}
+{
+    "_id" : ObjectId("651693017feb901dbd774dac"),
+    "country" : "Germany",
+    "isoCode" : "DE",
+    "population" : "23200644",
+    "airQualityIndex" : "63",
+    "rank" : "29"
+}
+{
+    "_id" : ObjectId("6516931e7feb901dbd774dad"),
+    "country" : "Greece",
+    "isoCode" : "GR",
+    "population" : "3200644",
+    "airQualityIndex" : "63",
+    "rank" : "30"
+}

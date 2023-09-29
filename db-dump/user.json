@@ -1,0 +1,18 @@
+{
+    "_id" : ObjectId("6511690b9e842c0b88104cf1"),
+    "id" : "18d6e7c0-db07-4433-a708-3668dc8c9c5f",
+    "username" : "koushik",
+    "password" : "$2b$10$0k/0A3X6m0I9y6nACWCQm.hxmRX1OT0HS/TR0cVgUhfFWkEVi1Q5a"
+}
+{
+    "_id" : ObjectId("65145e20faaa7e9afb6a24d6"),
+    "id" : "e8f6e4fe-5afc-4f45-b740-592a21f27632",
+    "username" : "amit",
+    "password" : "$2b$10$2/Q.MltqNLpwTMZnhYo0quFuy4n8nwxBZZFZxPSVOFfJAjq31IR8S"
+}
+{
+    "_id" : ObjectId("65145f2afaaa7e9afb6a24d7"),
+    "id" : "a8c52271-05c8-453d-b8df-e793dc04d7d2",
+    "username" : "admin",
+    "password" : "$2b$10$B4Mq2xBukM5GWQREoVYK3uySA.L5ou3e.lrFMt8eJk59DLjRa8pDS"
+}
