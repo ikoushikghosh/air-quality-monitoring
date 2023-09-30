@@ -18,7 +18,6 @@ const AppLayout: React.FC<Props> = ({ pageTitle, children }) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main className="max-w-7xl m-auto">
         <div>
           <Navbar />

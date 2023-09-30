@@ -4,7 +4,7 @@ import React from 'react';
 
 const Navbar: React.FC = () => {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 mb-20 shadow-xl rounded-box">
       <div className="flex-1">
         <a className="btn btn-ghost normal-case text-xl">Air Quality Monitor</a>
       </div>

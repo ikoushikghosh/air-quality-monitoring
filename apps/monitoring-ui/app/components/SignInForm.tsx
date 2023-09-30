@@ -1,36 +1,49 @@
 'use client';
 import React, { ChangeEvent, useState } from 'react';
-import { post } from '../../libs/base-http-helper';
 import { useRouter } from 'next/navigation';
+import { SignIn } from '../../models/SignIn';
 
-const SignInForm: React.FC<{ setToken: (token: string) => void }> = (props) => {
+const SignInForm: React.FC<{
+  signingAction: (params: SignIn) => Promise<SignIn>;
+  buttonName: string;
+}> = (props) => {
   const router = useRouter();
   const [user, setUser] = useState({
     username: '',
     password: '',
   });
-  const [isError, setError] = useState(false);
+  const [error, setError] = useState({
+    isError: false,
+    message: '',
+  });
+  const [isLoading, setLoading] = useState(false);
 
   const handleFormSubmit = async (event: ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setError(false);
+    setLoading(true);
+    setError({ isError: false, message: '' });
     const { username, password } = user;
     try {
-      const result = await post('auth/signin', '', { username, password });
-      const accessToken = result.data.accessToken;
+      const result = await props.signingAction({ username, password });
+      const { accessToken } = result;
       if (accessToken) {
-        await props.setToken(accessToken);
+        router.push('/airinfo');
+      } else {
+        setLoading(false);
+        setError({
+          isError: false,
+          message: 'User created successfully. Please go to Login!',
+        });
       }
-
-      router.push('/airinfo');
     } catch (ex) {
       console.log(ex);
-      setError(true);
+      setLoading(false);
+      setError({ ...error, isError: true });
     }
   };
   return (
     <div>
-      {isError && (
+      {error.isError && (
         <div className="alert alert-error mb-10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -46,6 +59,24 @@ const SignInForm: React.FC<{ setToken: (token: string) => void }> = (props) => {
             />
           </svg>
           <span>Error! Invalid Credentials.</span>
+        </div>
+      )}
+      {!error.isError && error.message && (
+        <div className="alert alert-success mb-10">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="stroke-current shrink-0 h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <span>{error.message}</span>
         </div>
       )}
       <form onSubmit={handleFormSubmit}>
@@ -86,7 +117,17 @@ const SignInForm: React.FC<{ setToken: (token: string) => void }> = (props) => {
           />
         </div>
         <div className="flex justify-center items-center mt-6">
-          <button className="btn btn-primary btn-wide">Login</button>
+          {!isLoading && (
+            <button className="btn btn-primary btn-wide">
+              {props.buttonName}
+            </button>
+          )}
+          {isLoading && (
+            <button className="btn btn-wide">
+              <span className="loading loading-spinner"></span>
+              loading
+            </button>
+          )}
         </div>
       </form>
     </div>

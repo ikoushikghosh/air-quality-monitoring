@@ -1,8 +1,8 @@
 import React from 'react';
 import SignInForm from '../components/SignInForm';
 import Link from 'next/link';
-import { setCookie } from '../../actions/set-cookie';
 import { NextPage } from 'next';
+import { signup } from '../../actions/sign-in-action';
 
 const SignupPage: NextPage = () => {
   return (
@@ -13,7 +13,7 @@ const SignupPage: NextPage = () => {
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
               Sign up for an account
             </h1>
-            <SignInForm setToken={setCookie} />
+            <SignInForm signingAction={signup} buttonName="Sign Up" />
             <p className="text-sm text-center font-light text-gray-500 dark:text-gray-400">
               Back To Login{' '}
               <Link href="/login" className="link link-primary">

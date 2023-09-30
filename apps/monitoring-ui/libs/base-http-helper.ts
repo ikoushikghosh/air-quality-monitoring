@@ -40,7 +40,7 @@ export const remove = async (endpoint: string, token: string, options = {}) => {
 };
 
 export const handleHttpError = (error: any) => {
-  const { statusCode } = error.response.data;
+  const { statusCode } = error.response ?? error;
 
   if (statusCode !== 401) {
     throw error;

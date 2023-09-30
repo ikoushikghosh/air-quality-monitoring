@@ -20,9 +20,7 @@ export class UsersRepository extends Repository<User> {
         username,
         password: hashedPassword,
       });
-      console.log('saving...');
       await this.save(user);
-      console.log('saved.');
     } catch (error) {
       if (error?.code === 11000) {
         throw new ConflictException(
