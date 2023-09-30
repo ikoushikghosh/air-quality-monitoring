@@ -1,9 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import SignInForm from './components/SignInForm';
-import { setCookie } from '../actions/set-cookie';
+import { signin } from '../actions/sign-in-action';
+import { NextPage } from 'next';
 
-const Home = () => {
+const Home: NextPage = () => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-40">
       <div className="z-10 max-w-5xl w-full items-center justify-center lg:flex">
@@ -12,7 +13,7 @@ const Home = () => {
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
               Log in to your account
             </h1>
-            <SignInForm setToken={setCookie} />
+            <SignInForm signingAction={signin} buttonName="Log In" />
 
             <p className="text-sm text-center font-light text-gray-500 dark:text-gray-400">
               Don’t have an account yet?{' '}
